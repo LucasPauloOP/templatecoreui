@@ -1,3 +1,26 @@
-<p>
-  student-getid works!
-</p>
+<div *ngIf="student.id != 0" class="example-container mat-elevation-z8">
+    <div class="button-row">
+        <button mat-flat-button color="accent" class="button" [routerLink]="['/student']"><mat-icon>list</mat-icon> Voltar</button>
+    </div>  
+  <div class="example-loading-shade"
+         *ngIf="result">
+      <mat-spinner *ngIf="result"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-subtitle>{{student.id}}</mat-card-subtitle>
+        <mat-card-title>Nome: {{student.name}}<br>Sobrenome: {{student.lastname}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-card-subtitle class="subtitle">Idade: {{student.age}} anos</mat-card-subtitle>
+          <mat-list class="subtitle"> Cursos:
+            <mat-list-item class="subtitle" *ngFor="let curso of student.course" routerLink="/course/{{curso.id}}">{{curso.name}} {{curso.lastname}}</mat-list-item>
+          </mat-list>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-flat-button color="primary" class="button edit-button" [routerLink]="['/update/student', student.id]"><mat-icon>edit</mat-icon> Editar</button>
+        <button mat-flat-button color="warn" class="delete-button" (click)="deleteStudent(student.id)"><mat-icon>delete</mat-icon> Excluir</button> 
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div *ngIf="isLoadingResults == false && student.id == 0">404</div>

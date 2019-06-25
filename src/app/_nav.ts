@@ -35,6 +35,11 @@ export const navItems: NavData[] = [
     url: '/user',
     icon: 'icon-user'
   },
+  {
+    name: 'Professor',
+    url: '/teacher',
+    icon: 'icon-people'
+  }
   // {
   //   name: 'Dashboard',
   //   url: '/dashboard',

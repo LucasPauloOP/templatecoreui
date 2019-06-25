@@ -34,43 +34,6 @@ import { RegisterComponent } from './views/register/register.component';
 
 const routes: Routes = [
 
-/*-----------------------------------user----------------------------------------------------------*/
-
-
-{path: 'user/create', component: UserPostComponent,  data: { title: 'Cadastro de usuário' }},
-
-
-
-
-
-
-// /*------------------------------------teacher------------------------------------------------------*/
-{path: 'teacher', component: TeacherComponent,  data: { title: 'Lista de professors' } },
-
-{path: 'teacher/create', component: TeacherPostComponent,  data: { title: 'Cadastro de professor' }},
-
-{path: 'teacher/update/:id', component: TeacherPutComponent,  data: { title: 'Editar professor' }},
-
-{path:  'teacher/:id', component:TeacherGetidComponent,  data: { title: 'Detalhes do professor' }},
-
-
-// /*----------------------------------course---------------------------------------------------------*/
-{path: 'course', component: CourseComponent,  data: { title: 'Lista de curso' } },
-
-{path: 'course/create', component: CoursePostComponent,  data: { title: 'Cadastro de curso' }},
-
-{path: 'update/course/:id', component: CoursePutComponent,  data: { title: 'Editar curso' }},
-
-{path:  'course/:id', component: CourseGetidComponent,  data: { title: 'Detalhes do curso' }},
-
-// /*----------------------------------student--------------------------------------------------------*/
-{path: 'student', component: StudentComponent,  data: { title: 'Lista de curso' } },
-
-{path: 'student/create', component: StudentPostComponent,  data: { title: 'Cadastro de curso' }},
-
-{path: 'update/student/:id', component: StudentPutComponent,  data: { title: 'Editar curso' }},
-
-{path:  'student/:id', component: StudentGetidComponent,  data: { title: 'Detalhes do curso' }},
 {
   path: '',
   redirectTo: 'dashboard',
@@ -117,6 +80,28 @@ const routes: Routes = [
     {path: 'user', component: UserinicialComponent,  data: { title: 'Lista de usuários' } },
 
     {path: 'user/update/:id', component: UserPutComponent,  data: { title: 'Editar usuário' }},
+
+    /*teacher*/
+    {path: 'teacher', component: TeacherComponent,  data: { title: 'Lista de professors' } },
+
+    {path: 'teacher/update/:id', component: TeacherPutComponent,  data: { title: 'Editar professor' }},
+
+    {path:  'teacher/:id', component:TeacherGetidComponent,  data: { title: 'Detalhes do professor' }}, 
+
+    /*course*/
+    {path: 'course', component: CourseComponent,  data: { title: 'Lista de curso' } },
+
+    {path: 'update/course/:id', component: CoursePutComponent,  data: { title: 'Editar curso' }},
+
+    {path:  'course/:id', component: CourseGetidComponent,  data: { title: 'Detalhes do curso' }},
+
+    /*student*/
+    {path: 'student', component: StudentComponent,  data: { title: 'Lista de curso' } },
+
+    {path: 'update/student/:id', component: StudentPutComponent,  data: { title: 'Editar curso' }},
+
+    {path:  'student/:id', component: StudentGetidComponent,  data: { title: 'Detalhes do curso' }},
+
 
     {
       path: 'base',

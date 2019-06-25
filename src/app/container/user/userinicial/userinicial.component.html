@@ -1,3 +1,62 @@
-<p>
-  userinicial works!
-</p>
+
+<div>
+<h3>Cadastre um usuário</h3>
+</div>
+<form class="example-container" [formGroup]="user" (ngSubmit)="postUser(user.value)">
+
+  <mat-form-field>
+    <input matInput name = "name" required placeholder="Nome" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name = "lastname" required placeholder="Sobrenome" formControlName="lastname">
+  </mat-form-field>
+
+  <mat-form-field>
+     <mat-label>Perfil</mat-label>
+      <select matNativeControl required name="profile" formControlName="profile">
+        <option value="admin">Administrador</option>
+        <option value="guess">Visitante</option>
+      </select>
+    </mat-form-field>
+    
+
+  <button type="submit" [disabled]="!user.valid" mat-raised-button color="primary">Cadastrar</button>
+</form>
+<div class="example-container mat-elevation-z8 ">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Pesquisa">
+      </mat-form-field>
+    
+<table mat-table [dataSource]="dataSource" class='table1' >
+
+    <ng-container matColumnDef = "id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+
+  <ng-container matColumnDef = "name">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let row">{{row.name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef ="lastname">
+    <th mat-header-cell *matHeaderCellDef>Sobrenome</th>
+    <td mat-cell *matCellDef="let row">{{row.lastname}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef ="profile">
+    <th mat-header-cell *matHeaderCellDef>Perfil</th>
+    <td mat-cell *matCellDef="let row">{{row.profile}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>  </th>
+    <td mat-cell *matCellDef="let row"> <button mat-flat-button color= primary routerLink="/user/{{row.id}}" selected>Outras informações</button></td>
+  </ng-container>
+  
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>  

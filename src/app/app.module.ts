@@ -17,6 +17,7 @@ import {
   MatSidenavModule,
   MatTableModule,
   MatToolbarModule } from '@angular/material';
+  import { MatPaginatorModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -102,6 +103,7 @@ import { StudentPutComponent } from './container/student/student-put/student-put
     MatSelectModule,
     MatSidenavModule,  
     MatTableModule,
+    MatPaginatorModule,
     MatToolbarModule
 
   ],

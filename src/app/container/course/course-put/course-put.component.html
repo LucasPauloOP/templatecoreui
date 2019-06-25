@@ -1,3 +1,25 @@
-<p>
-  course-put works!
-</p>
+<div> <h3>Editar curso</h3></div>
+
+  <form class="example-container" [formGroup]="course" (ngSubmit)="putCourse(course.value)">
+
+    <mat-form-field>
+      <input matInput name="name" required placeholder="Nome" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="number" name="period" placeholder="Periodo" formControlName="period">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="city" required placeholder="Cidade" formControlName="city">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label >Teacher</mat-label>
+        <mat-select name="city" formControlName="teacher" multiple>
+        <mat-option *ngFor="let prof of teacher" [value]="prof.id">{{prof.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button type="submit" [disabled]="!course.valid" mat-raised-button class="button"><mat-icon>edit</mat-icon>Editar</button>
+  </form>

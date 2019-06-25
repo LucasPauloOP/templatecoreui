@@ -1,3 +1,25 @@
-<p>
-  student-put works!
-</p>
+<div> <h3>Editar estudante</h3> </div>
+
+  <form class="example-container" [formGroup]="student" (ngSubmit)="putStudent(student.value)">
+
+    <mat-form-field>
+      <input matInput name="name" required placeholder="Nome" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput name="lastname" required placeholder="Sobrenome" formControlName="lastname">
+      </mat-form-field>
+
+    <mat-form-field>
+        <input matInput type="number" name="age" placeholder="Idade " formControlName="age">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label >Curso</mat-label>
+        <mat-select name="course" formControlName="course">
+        <mat-option *ngFor="let curso of course" [value]="curso.id">{{curso.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+    <button type="submit" [disabled]="!student.valid" mat-raised-button class="button"><mat-icon>edit</mat-icon> Editar</button>
+  </form>

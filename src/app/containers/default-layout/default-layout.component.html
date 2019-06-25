@@ -1,11 +1,11 @@
 <app-header
-  [navbarBrandRouterLink]="['/dashboard']"
+  [navbarBrandRouterLink]="['/user']"
   [fixed]="true"
-  [navbarBrandFull]="{src:'assets/img/prominas-logo.png', width: 89, height: 25, alt: 'Logo'}"
-  [navbarBrandMinimized]="{src: 'assets/img/prominas-logo.png', width: 30, height: 30, alt: 'Logo'}"
+  [navbarBrandFull]="{src:'assets/img/logo.jpeg', width: 100, height: 40, alt: 'Logo'}"
+  [navbarBrandMinimized]="{src: 'assets/img/logo.jpeg', width: 30, height: 30, alt: 'Logo'}"
   [sidebarToggler]="'lg'"
-  [asideMenuToggler]="'lg'">
-  <ul class="nav navbar-nav d-md-down-none">
+  [asideMenuToggler]="'lg' ">
+  <!-- <ul class="nav navbar-nav d-md-down-none">
     <li class="nav-item px-3">
       <a class="nav-link" href="#">Dashboard</a>
     </li>
@@ -15,10 +15,11 @@
     <li class="nav-item px-3">
       <a class="nav-link" href="#">Settings</a>
     </li>
-  </ul>
+  </ul> -->
+  <ul class="nav navbar-nav ml-auto"></ul>
 </app-header>
 <div class="app-body">
-  <app-sidebar [fixed]="true" [display]="'lg'">
+  <app-sidebar [fixed]="true">
     <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
     <app-sidebar-minimizer></app-sidebar-minimizer>
   </app-sidebar>
@@ -41,4 +42,8 @@
     </div><!-- /.container-fluid -->
   </main>
 </div>
+<app-footer>
+    <span><a href="https://www.ucamprominas.com.br/">Prominas</a> &copy; 2018 creativeLabs.</span>
+    <span class="ml-auto">Powered by <a href="https://www.ucamprominas.com.br/">Prominas para o mundo</a></span>
+  </app-footer>
 

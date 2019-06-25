@@ -9,19 +9,16 @@ import {UserGetidComponent} from './container/user/user-getid/user-getid.compone
 
 /*teacher*/
 import{TeacherComponent} from './container/teacher/teacher/teacher.component';
-import{TeacherPostComponent} from './container/teacher/teacher-post/teacher-post.component';
 import{TeacherPutComponent} from './container/teacher/teacher-put/teacher-put.component';
 import{TeacherGetidComponent} from './container/teacher/teacher-getid/teacher-getid.component';
 
 // /*course*/
 import {CourseComponent} from './container/course/course/course.component';
-import {CoursePostComponent} from './container/course/course-post/course-post.component';
 import {CoursePutComponent} from './container/course/course-put/course-put.component';
 import {CourseGetidComponent} from './container/course/course-getid/course-getid.component';
 
 // /*student*/
 import {StudentComponent} from './container/student/student/student.component'
-import {StudentPostComponent} from './container/student/student-post/student-post.component'
 import {StudentPutComponent} from './container/student/student-put/student-put.component'
 import {StudentGetidComponent} from './container/student/student-getid/student-getid.component'
 

@@ -31,15 +31,27 @@ export interface NavData {
 
 export const navItems: NavData[] = [
   {
-    name: 'Usuário',
+    name: 'Usuários',
     url: '/user',
     icon: 'icon-user'
   },
   {
-    name: 'Professor',
+    name: 'Professores',
     url: '/teacher',
     icon: 'icon-people'
-  }
+  },
+
+  {
+    name: 'Cursos',
+    url: '/course',
+    icon: 'icon-screen-desktop'
+  },
+
+  {
+    name: 'Estudantes',
+    url: '/student',
+    icon: 'icon-star'
+  },
   // {
   //   name: 'Dashboard',
   //   url: '/dashboard',

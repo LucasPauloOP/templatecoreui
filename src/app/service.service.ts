@@ -5,7 +5,7 @@ import {HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Teacher } from './container/teacher/teacher-schema';
 import { Course } from './container/course/course-Schema';
-import { Student} from './container/student/studen-schema'
+import { Student} from './container/student/student-schema'
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})

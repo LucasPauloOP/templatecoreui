@@ -52,7 +52,27 @@ import { AppRoutingModule } from './app.routing';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+
+/*user*/
 import { UserinicialComponent } from './container/user/userinicial/userinicial.component';
+import { UserPostComponent } from './container/user/user-post/user-post.component';
+import { UserPutComponent } from './container/user/user-put/user-put.component';
+import { UserGetidComponent } from './container/user/user-getid/user-getid.component';
+/*teacher*/
+import { TeacherComponent } from './container/teacher/teacher/teacher.component';
+import { TeacherPostComponent } from './container/teacher/teacher-post/teacher-post.component';
+import { TeacherPutComponent } from './container/teacher/teacher-put/teacher-put.component';
+import { TeacherGetidComponent } from './container/teacher/teacher-getid/teacher-getid.component';
+/*course*/
+import { CourseComponent } from './container/course/course/course.component';
+import { CoursePostComponent } from './container/course/course-post/course-post.component';
+import { CoursePutComponent } from './container/course/course-put/course-put.component';
+import { CourseGetidComponent } from './container/course/course-getid/course-getid.component';
+/*student*/
+import { StudentGetidComponent } from './container/student/student-getid/student-getid.component';
+import { StudentComponent } from './container/student/student/student.component';
+import { StudentPostComponent } from './container/student/student-post/student-post.component';
+import { StudentPutComponent } from './container/student/student-put/student-put.component';
 
 @NgModule({
   imports: [
@@ -93,6 +113,21 @@ import { UserinicialComponent } from './container/user/userinicial/userinicial.c
     LoginComponent,
     RegisterComponent,
     UserinicialComponent,
+    UserPostComponent,
+    UserPutComponent,
+    UserGetidComponent,
+    TeacherComponent,
+    TeacherPostComponent,
+    TeacherPutComponent,
+    TeacherGetidComponent,
+    CourseComponent,
+    CoursePostComponent,
+    CoursePutComponent,
+    CourseGetidComponent,
+    StudentGetidComponent,
+    StudentComponent,
+    StudentPostComponent,
+    StudentPutComponent,
     
   ],
   providers: [{

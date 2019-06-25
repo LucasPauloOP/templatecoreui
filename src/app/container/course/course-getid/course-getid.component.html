@@ -1,3 +1,30 @@
-<p>
-  course-getid works!
-</p>
+<div *ngIf="course.id != 0" class="example-container mat-elevation-z8">
+    <div class="button-row">
+        <button mat-flat-button color="accent" class="button" [routerLink]="['/course']"><mat-icon>list</mat-icon> Voltar</button>
+    </div>  
+  <div class="example-loading-shade"
+         *ngIf="result">
+      <mat-spinner *ngIf="result"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-subtitle>{{course.id}}</mat-card-subtitle>
+        <mat-card-title>Nome: {{course.name}}</mat-card-title>
+        <mat-card-subtitle class="subtitle">Cidade: {{course.city}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-card-subtitle class="subtitle">Periodo: {{course.period}} semestres</mat-card-subtitle>
+          <mat-list class="subtitle"> Professores:
+            <mat-list-item *ngFor="let prof of course.teacher" routerLink="/teacher/{{prof.id}}">{{prof.name}} {{prof.lastname}}</mat-list-item>
+          </mat-list>
+      </mat-card-content>
+  
+      <mat-card-actions>
+         <button mat-flat-button color="primary" class="button edit-button" [routerLink]="['/update/course', course.id]"><mat-icon>edit</mat-icon> Editar</button>
+         <button mat-flat-button color="warn"  class="delete-button" (click)="deleteCourse(course.id)"><mat-icon>delete</mat-icon> Excluir</button>
+      </mat-card-actions>
+      
+    </mat-card>
+  </div>
+  
+  <div *ngIf="result == false && course.id == 0">404</div>

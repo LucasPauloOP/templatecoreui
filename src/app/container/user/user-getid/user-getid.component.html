@@ -4,7 +4,7 @@
     <mat-spinner *ngIf="result"></mat-spinner>
   </div>
   <div class="button-row">
-    <button mat-flat-button color="accent" [routerLink]="['/user']"><mat-icon>list</mat-icon> Voltar</button>
+    <button mat-flat-button class="button" color="accent" [routerLink]="['/user']"><mat-icon>list</mat-icon> Voltar</button>
   </div>
   <mat-card class="example-card">
     <mat-card-header>
@@ -13,12 +13,8 @@
       <mat-card-subtitle class="subtitle">Perfil: {{user.profile}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-actions>
-      <button mat-flat-button color="primary" class="teste" [routerLink]="['/user/update/',user.id]"><mat-icon>edit</mat-icon> Editar</button>
-      <!-- <button mat-flat-button color="warn" (click)="deleteUser(user.id)"><mat-icon>delete</mat-icon> Excluir</button> -->
+      <button mat-flat-button color="primary" class="button edit-button" [routerLink]="['/user/update/',user.id]"><mat-icon>edit</mat-icon> Editar</button>
+      <button mat-flat-button color="warn" class="delete-button" (click)="deleteUser(user.id)"><mat-icon>delete</mat-icon> Excluir</button>
     </mat-card-actions>
-    <mat-card-actions>
-        <!-- <button mat-flat-button color="primary" class="teste" [routerLink]="['/user/update/',user.id]"><mat-icon>edit</mat-icon> Editar</button> -->
-        <button mat-flat-button color="warn" (click)="deleteUser(user.id)"><mat-icon>delete</mat-icon> Excluir</button>
-      </mat-card-actions>
   </mat-card>
-</div>
+</div>  

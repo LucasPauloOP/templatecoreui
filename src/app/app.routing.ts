@@ -39,9 +39,9 @@ const routes: Routes = [
 
 {path: 'user/create', component: UserPostComponent,  data: { title: 'Cadastro de usuário' }},
 
-{path: 'user/update/:id', component: UserPutComponent,  data: { title: 'Editar usuário' }},
 
-{path:  'user/:id', component:UserGetidComponent,  data: { title: 'Detalhes do usuário' }},
+
+
 
 
 // /*------------------------------------teacher------------------------------------------------------*/
@@ -111,7 +111,13 @@ const routes: Routes = [
     title: 'Home'
   },
   children: [
+    /*user*/
+    {path:  'user/:id', component:UserGetidComponent,  data: { title: 'Detalhes do usuário' }},
+
     {path: 'user', component: UserinicialComponent,  data: { title: 'Lista de usuários' } },
+
+    {path: 'user/update/:id', component: UserPutComponent,  data: { title: 'Editar usuário' }},
+
     {
       path: 'base',
       loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)

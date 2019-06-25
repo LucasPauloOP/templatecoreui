@@ -1,3 +1,23 @@
-<p>
-  user-put works!
-</p>
+<div>
+  <h3>Editar usuário</h3>
+</div>
+<form class="example-container" [formGroup]="user" (ngSubmit)="updateUser(user.value)">
+
+  <mat-form-field>
+    <input matInput name="name" placeholder="Nome" formControlName="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input  matInput name="lastname" placeholder="Sobrenome" formControlName="lastname">
+  </mat-form-field>
+
+  <mat-form-field>
+      <mat-label>Perfil</mat-label>
+       <select matNativeControl required name="profile" formControlName="profile">
+         <option value="admin">Administrador</option>
+         <option value="guess">Visitante</option>
+       </select>
+     </mat-form-field>
+
+    <button type="submit" [disabled]="!user.valid" mat-raised-button color="primary">Editar</button>
+</form>

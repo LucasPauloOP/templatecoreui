@@ -1,10 +1,9 @@
 <div class="animated fadeIn">
   <div class="row">
     <div class="col-sm-6 col-lg-3">
-      <div class="card text-white bg-info">
+      <div class="card text-black bg-info">
         <div class="card-body pb-0">
           <button type="button" class="btn btn-transparent p-0 float-right">
-            <i class="icon-location-pin"></i>
           </button>
           <div class="text-value lettercollor">Usuários: {{total}}</div>
           <div class="lettercollor">Tipos de usuários:</div>
@@ -24,5 +23,18 @@
       </div>
     </div><!--/.col-->
   </div><!--/.row-->
+  <div class="row" >
+    <div class="col-sm-8 col-lg-6">
+  <canvas
+  *ngIf = "pieChartData.length" 
+  baseChart 
+  class="chart"
+  [data]="pieChartData"
+  [labels]="pieChartLabels"
+  [colors]="pieChart1Colours"
+  [chartType]="pieChartType">
+</canvas>
+</div><!--/.col-->
+</div><!--/.row-->
   
         

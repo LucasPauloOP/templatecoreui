@@ -85,21 +85,42 @@ export class DashboardComponent implements OnInit {
   ];
   public barChart1Legend = false;
   public barChart1Type = 'bar';
-
-
+  
+  
   /*graphcs Student*/
-  course : Course[];
-  student=0;
+  public pieChartLabels: Array<any> = [];
+  public pieChartData: Array<any> = [];
+  public pieChartType = 'pie';
+  courses = [];
+  student=[];
   getStudent(){
       forkJoin(this.service.getAllStudent(),this.service.getAllCourse()).subscribe(res =>{
-          console.log(res);
+          let courses = res[1];
+          let students = res[0];
+
+          for(var aux=0;aux<courses.length;aux++)
+          {
+            let numStudents = 0;
+            this.courses.push(courses[aux].name);
+
+            for(var aux2=0;aux2<students.length;aux2++)
+            {
+                if(courses[aux].id == students[aux2].course[0].id)
+                {
+                  numStudents++;
+                
+                }
+                // console.log(">>>>>",students[aux2]);
+            }
+
+            this.student.push(numStudents);
+          }
           
-      })
-        
+      })  
+      
+    this.pieChartLabels = this.courses;
+    this.pieChartData = this.student;
   }
-  public pieChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
-  public pieChartData: number[] = [300, 500, 100];
-  public pieChartType = 'pie';
 
  
 

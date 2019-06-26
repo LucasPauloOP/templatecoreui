@@ -6,11 +6,14 @@
           <button type="button" class="btn btn-transparent p-0 float-right">
             <i class="icon-location-pin"></i>
           </button>
-          <div class="text-value">9.723</div>
-          <div>Tipos de usuários</div>
+          <div class="text-value lettercollor">Usuários: {{total}}</div>
+          <div class="lettercollor">Tipos de usuários:</div>
         </div>
-        <div class="chart-wrapper mt-3 mx-3" style="height:70px;">
-          <canvas baseChart class="chart"
+        <div class="chart-wrapper mt-3 mx-3" style="height:70px;" >
+          <canvas 
+          *ngIf="barChart1Data.length"
+           baseChart 
+          class="chart" 
           [datasets]="barChart1Data"
           [labels]="barChart1Labels"
           [options]="barChart1Options"

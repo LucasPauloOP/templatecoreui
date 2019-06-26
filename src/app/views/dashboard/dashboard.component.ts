@@ -5,7 +5,7 @@ import {Service} from '../../service.service';
 import {User} from '../../container/user/user-schema';
 import { Router } from '@angular/router';
 import { count } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import {Student} from '../../container/student/student-schema'
 import {Course} from '../../container/course/course-schema'
 
@@ -50,8 +50,6 @@ export class DashboardComponent implements OnInit {
       return this.dataSourceGraphcs;
       })
   }
-
-  /*grphcs Student*/
  
   // barChart1
   public barChart1Data: Array<any> = [];
@@ -88,12 +86,28 @@ export class DashboardComponent implements OnInit {
   public barChart1Legend = false;
   public barChart1Type = 'bar';
 
+
+  /*graphcs Student*/
+  course : Course[];
+  student=0;
+  getStudent(){
+      forkJoin(this.service.getAllStudent(),this.service.getAllCourse()).subscribe(res =>{
+          console.log(res);
+          
+      })
+        
+  }
+  public pieChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
+  public pieChartData: number[] = [300, 500, 100];
+  public pieChartType = 'pie';
+
  
 
   ngOnInit(): void {
     console.log(this.dataSourceGraphcs);
     // generate random values for mainChart
       this.getUser();
+      this.getStudent();
     }
   
 }

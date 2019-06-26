@@ -96,7 +96,6 @@
 - update: `@angular/platform-browser` to `^7.2.10`
 - update: `@angular/platform-browser-dynamic` to `^7.2.10`
 - update: `@angular/router` to `^7.2.10`
-- update: `chart.js` to `^2.8.0`
 - update: `flag-icon-css` to `^3.3.0`
 - update: `@angular-devkit/build-angular` to `^0.13.6`
 - update: `@angular/cli` to `^7.3.6`
@@ -277,7 +276,6 @@
 - update: `@coreui/coreui` to `2.0.20`
 - update: `@angular/*` to `6.1.10`
 - update: `@angular/cli` to `6.2.6`
-- update: `chart.js` to `2.7.3`
 - update: `flag-icon-css` to `3.2.1`
 - update: `ngx-perfect-scrollbar` to `6.3.1`
 - update: `rxjs` to `6.3.3`

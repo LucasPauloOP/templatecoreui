@@ -52,7 +52,6 @@ import { AppRoutingModule } from './app.routing';
 // Import 3rd party components
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
-import { ChartsModule } from 'ng2-charts';
 
 /*user*/
 import { UserinicialComponent } from './container/user/userinicial/userinicial.component';
@@ -85,7 +84,6 @@ import { StudentPutComponent } from './container/student/student-put/student-put
     PerfectScrollbarModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
-    ChartsModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -101,7 +99,8 @@ import { StudentPutComponent } from './container/student/student-put/student-put
     MatSidenavModule,  
     MatTableModule,
     MatPaginatorModule,
-    MatToolbarModule
+    MatToolbarModule,
+    
 
   ],
   declarations: [

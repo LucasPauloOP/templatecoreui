@@ -26,7 +26,7 @@ import { DefaultLayoutComponent } from './containers';
 
 import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
-import { LoginComponent } from './views/login/login.component';
+import { CallbackComponentComponent } from '../app/callback-component/callback-component.component';
 import { RegisterComponent } from './views/register/register.component';
 
 const routes: Routes = [
@@ -51,8 +51,8 @@ const routes: Routes = [
   }
 },
 {
-  path: 'login',
-  component: LoginComponent,
+  path: 'callback',
+  component: CallbackComponentComponent,
   data: {
     title: 'Login Page'
   }
@@ -71,6 +71,13 @@ const routes: Routes = [
     title: 'Home'
   },
   children: [
+    {
+      path: 'callback',
+      component: CallbackComponentComponent,
+      data: {
+        title: 'Login Page'
+      }
+    },
     /*user*/
     {path:  'user/:id', component:UserGetidComponent,  data: { title: 'Detalhes do usuário' }},
 

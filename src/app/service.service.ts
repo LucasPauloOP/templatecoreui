@@ -8,10 +8,11 @@ import { Course } from './container/course/course-schema';
 import { Student} from './container/student/student-schema'
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json'})
+  headers: new HttpHeaders({'Content-Type': 'application/json',"authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik1qQTJPRFU0TWpnd1FVTTFNell4UWpjd1JEa3hSVUkzUkRVM01VWkdNek15UVRJM09FRXhRZyJ9.eyJpc3MiOiJodHRwczovL2Rldi00N2IzODgxZy5hdXRoMC5jb20vIiwic3ViIjoiWUJWcWFFV2Y4YTVISXoxVkZ4Wk03ZTVVZ1BpZ0N6N2tAY2xpZW50cyIsImF1ZCI6InNhZGFkYWQiLCJpYXQiOjE1NjE2NDYwNDEsImV4cCI6MTU2MTczMjQ0MSwiYXpwIjoiWUJWcWFFV2Y4YTVISXoxVkZ4Wk03ZTVVZ1BpZ0N6N2siLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.lo7YwYbT4D3jznkvagMG7csuEuRi48pk9ApyVpCrDJr_165sHtXRNprJy36yPNqMKO_k7tiSALPQUOnGlqAE2Gt2GjQ2n2aVD_kuznipgS7Vd0bFQb6ftOuzXHow0uNYAZQCKRmuQItJCJZdhNORdnT76Xc9HZxEDTbAAP_RU0SonJPPtbmJGeqQ3IfqepI3i9lY2CPVUVHbknEXxRgpdOsK3_Sj6uxmTwWYhY0vp2Jgkf5_nAmKpoMHuAcxjn0eEPL7UgHYHkg3D_NzcRioWquGjLEEKaB9t9CtLoWgKohI3d5gL8nPtyTVn83kTKReb-uaOp1-JayHxLEiOgnxJw'})
 };
 
 const baseApi = 'https://traineeprominas-jjmg-sandbox.herokuapp.com/api/v1';
+const baseApiJWT = 'https://traineeprominas-jjmg-sandbox.herokuapp.com/api/v1.1'
 
 @Injectable({
   providedIn: 'root'
@@ -23,104 +24,104 @@ export class Service {
 
   /*------------------------User----------------------------------------------*/
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${baseApi}/JSON/user`)
+    return this.http.get<User[]>(`${baseApi}/JSON/user`||`${baseApiJWT}/JSON/user`)
       .pipe(tap(user => console.log('Leu usuários')),
       // catchError(this.handleError('getAllUsers',[])) 
       );
     }
 
   getFilterUser(id:number): Observable<User>{
-    const url = `${baseApi}/JSON/user/${id}`;
+    const url = `${baseApi}/JSON/user/${id}`||`${baseApiJWT}/JSON/user/${id}`;
     return this.http.get<User>(url).pipe(tap(_ => console.log('Achou um usuário id=${id}')),
     // catchError(this.handleError<User>(`getUser id=${id}`))
     );
   }
 
   postUser(user): Observable<User> {
-    return this.http.post<User>(`${baseApi}/user`, user, httpOptions)
+    return this.http.post<User>(`${baseApi}/user`||`${baseApiJWT}/user`, user, httpOptions)
       .pipe(tap((user: User) => console.log('Usuário cadastrado com w/ id=${user.id}' )
       )//,catchError(this.handleError<User>('postUser')));
        ) }
   putUser(id,user:User): Observable<any> {
-    const url = `${baseApi}/user/${id}`;
+    const url = `${baseApi}/user/${id}`||`${baseApiJWT}/user/${id}`;
     return this.http.put(url,user,httpOptions)
 
       }
 
   deleteUser(id): Observable<User> {
-    const url = `${baseApi}/User/${id}`;
+    const url = `${baseApi}/User/${id}`||`${baseApiJWT}/user/${id}`;
 
     return this.http.delete<User>(url, httpOptions)
   }
 
   /*--------------------------Teacher------------------------------------------------------*/
   getAllTeachers(): Observable<Teacher[]> {
-    return this.http.get<Teacher[]>(`${baseApi}/JSON/teacher`)
+    return this.http.get<Teacher[]>(`${baseApi}/JSON/teacher`||`${baseApiJWT}/JSON/teacher`)
     }
 
   getFilterTeacher(id:number): Observable<Teacher>{
-    const url = `${baseApi}/JSON/teacher/${id}`;
+    const url = `${baseApi}/JSON/teacher/${id}`||`${baseApiJWT}/JSON/teacher/${id}`;
     return this.http.get<Teacher>(url)
   }
 
   postTeacher(teacher): Observable<Teacher> {
-    return this.http.post<Teacher>(`${baseApi}/teacher`, teacher, httpOptions)
+    return this.http.post<Teacher>(`${baseApi}/teacher`||`${baseApiJWT}/JSON/teacher`, teacher, httpOptions)
   }
   putTeacher(id,teacher:Teacher): Observable<any> {
-    const url = `${baseApi}/teacher/${id}`;
+    const url = `${baseApi}/teacher/${id}`||`${baseApiJWT}/teacher/${id}`;
     return this.http.put(url,teacher,httpOptions)
   }
 
   deleteTeacher(id): Observable<Teacher> {
-    const url = `${baseApi}/teacher/${id}`;
+    const url = `${baseApi}/teacher/${id}`||`${baseApiJWT}/teacher/${id}`;
 
     return this.http.delete<Teacher>(url, httpOptions)
   }
 
   /*-------------------------------------Course----------------------------------------------*/
   getAllCourse(): Observable<Course[]> {
-    return this.http.get<Course[]>(`${baseApi}/JSON/course`)
+    return this.http.get<Course[]>(`${baseApi}/JSON/course`||`${baseApiJWT}/JSON/course`)
     }
 
   getFilterCourse(id:number): Observable<Course>{
-    const url = `${baseApi}/JSON/course/${id}`;
+    const url = `${baseApi}/JSON/course/${id}`||`${baseApiJWT}/JSON/course/${id}`;
     return this.http.get<Course>(url)
   }
 
   postCourse(course): Observable<Course> {
-    return this.http.post<Course>(`${baseApi}/course`, course, httpOptions)
+    return this.http.post<Course>(`${baseApi}/course`||`${baseApiJWT}/course`, course, httpOptions)
   }
   putCourse(id,course:Course): Observable<any> {
-    const url = `${baseApi}/course/${id}`;
+    const url = `${baseApi}/course/${id}`||`${baseApiJWT}/JSON/course/${id}`;
     return this.http.put(url,course,httpOptions)
   }
 
   deleteCourse(id): Observable<Course> {
-    const url = `${baseApi}/course/${id}`;
+    const url = `${baseApi}/course/${id}`||`${baseApiJWT}/JSON/course/${id}`;
 
     return this.http.delete<Course>(url, httpOptions)
   }
 
   //--------------------------------------Student-------------------------------------------------------
   getAllStudent(): Observable<Student[]> {
-    return this.http.get<Student[]>(`${baseApi}/JSON/student`)
+    return this.http.get<Student[]>(`${baseApi}/JSON/student`||`${baseApiJWT}/JSON/student`)
     }
 
   getFilterStudent(id:number): Observable<Student>{
-    const url = `${baseApi}/JSON/student/${id}`;
+    const url = `${baseApi}/JSON/student/${id}`||`${baseApiJWT}/JSON/student/${id}`;
     return this.http.get<Student>(url)
   }
 
   postStudent(student): Observable<Student> {
-    return this.http.post<Student>(`${baseApi}/student`, student, httpOptions)
+    return this.http.post<Student>(`${baseApi}/student`||`${baseApiJWT}/JSON/student`, student, httpOptions)
   }
   putStudent(id,student): Observable<any> {
-    const url = `${baseApi}/student/${id}`;
+    const url = `${baseApi}/student/${id}`||`${baseApiJWT}/student/${id}`;
     return this.http.put(url,student,httpOptions)
   }
 
   deleteStudent(id): Observable<Student> {
-    const url = `${baseApi}/student/${id}`;
+    const url = `${baseApi}/student/${id}`||`${baseApiJWT}/student/${id}`;
 
     return this.http.delete<Student>(url, httpOptions)
   }

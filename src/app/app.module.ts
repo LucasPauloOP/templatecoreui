@@ -70,6 +70,7 @@ import { CourseGetidComponent } from './container/course/course-getid/course-get
 import { StudentGetidComponent } from './container/student/student-getid/student-getid.component';
 import { StudentComponent } from './container/student/student/student.component';
 import { StudentPutComponent } from './container/student/student-put/student-put.component';
+import { CallbackComponentComponent } from './callback-component/callback-component.component';
 
 @NgModule({
   imports: [
@@ -123,6 +124,7 @@ import { StudentPutComponent } from './container/student/student-put/student-put
     StudentGetidComponent,
     StudentComponent,
     StudentPutComponent,
+    CallbackComponentComponent,
     
   ],
   providers: [{

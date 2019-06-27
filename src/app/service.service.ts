@@ -8,10 +8,10 @@ import { Course } from './container/course/course-schema';
 import { Student} from './container/student/student-schema'
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json',"authorization": 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik1qQTJPRFU0TWpnd1FVTTFNell4UWpjd1JEa3hSVUkzUkRVM01VWkdNek15UVRJM09FRXhRZyJ9.eyJpc3MiOiJodHRwczovL2Rldi00N2IzODgxZy5hdXRoMC5jb20vIiwic3ViIjoiWUJWcWFFV2Y4YTVISXoxVkZ4Wk03ZTVVZ1BpZ0N6N2tAY2xpZW50cyIsImF1ZCI6InNhZGFkYWQiLCJpYXQiOjE1NjE2NDYwNDEsImV4cCI6MTU2MTczMjQ0MSwiYXpwIjoiWUJWcWFFV2Y4YTVISXoxVkZ4Wk03ZTVVZ1BpZ0N6N2siLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.lo7YwYbT4D3jznkvagMG7csuEuRi48pk9ApyVpCrDJr_165sHtXRNprJy36yPNqMKO_k7tiSALPQUOnGlqAE2Gt2GjQ2n2aVD_kuznipgS7Vd0bFQb6ftOuzXHow0uNYAZQCKRmuQItJCJZdhNORdnT76Xc9HZxEDTbAAP_RU0SonJPPtbmJGeqQ3IfqepI3i9lY2CPVUVHbknEXxRgpdOsK3_Sj6uxmTwWYhY0vp2Jgkf5_nAmKpoMHuAcxjn0eEPL7UgHYHkg3D_NzcRioWquGjLEEKaB9t9CtLoWgKohI3d5gL8nPtyTVn83kTKReb-uaOp1-JayHxLEiOgnxJw'})
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
-const baseApi = 'https://traineeprominas-jjmg-sandbox.herokuapp.com/api/v1';
+const baseApi = 'https://traineeprominas-jjmg-sandbox.herokuapp.com/api/v1.1';
 const baseApiJWT = 'https://traineeprominas-jjmg-sandbox.herokuapp.com/api/v1.1'
 
 @Injectable({
@@ -24,7 +24,7 @@ export class Service {
 
   /*------------------------User----------------------------------------------*/
   getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>(`${baseApi}/JSON/user`||`${baseApiJWT}/JSON/user`)
+    return this.http.get<User[]>(`${baseApi}/JSON/user`||`${baseApiJWT}/JSON/user`,httpOptions)
       .pipe(tap(user => console.log('Leu usuários')),
       // catchError(this.handleError('getAllUsers',[])) 
       );
@@ -32,7 +32,7 @@ export class Service {
 
   getFilterUser(id:number): Observable<User>{
     const url = `${baseApi}/JSON/user/${id}`||`${baseApiJWT}/JSON/user/${id}`;
-    return this.http.get<User>(url).pipe(tap(_ => console.log('Achou um usuário id=${id}')),
+    return this.http.get<User>(url,httpOptions).pipe(tap(_ => console.log('Achou um usuário id=${id}')),
     // catchError(this.handleError<User>(`getUser id=${id}`))
     );
   }
@@ -56,12 +56,12 @@ export class Service {
 
   /*--------------------------Teacher------------------------------------------------------*/
   getAllTeachers(): Observable<Teacher[]> {
-    return this.http.get<Teacher[]>(`${baseApi}/JSON/teacher`||`${baseApiJWT}/JSON/teacher`)
+    return this.http.get<Teacher[]>(`${baseApi}/JSON/teacher`||`${baseApiJWT}/JSON/teacher`,httpOptions)
     }
 
   getFilterTeacher(id:number): Observable<Teacher>{
     const url = `${baseApi}/JSON/teacher/${id}`||`${baseApiJWT}/JSON/teacher/${id}`;
-    return this.http.get<Teacher>(url)
+    return this.http.get<Teacher>(url,httpOptions)
   }
 
   postTeacher(teacher): Observable<Teacher> {
@@ -80,12 +80,12 @@ export class Service {
 
   /*-------------------------------------Course----------------------------------------------*/
   getAllCourse(): Observable<Course[]> {
-    return this.http.get<Course[]>(`${baseApi}/JSON/course`||`${baseApiJWT}/JSON/course`)
+    return this.http.get<Course[]>(`${baseApi}/JSON/course`||`${baseApiJWT}/JSON/course`,httpOptions)
     }
 
   getFilterCourse(id:number): Observable<Course>{
     const url = `${baseApi}/JSON/course/${id}`||`${baseApiJWT}/JSON/course/${id}`;
-    return this.http.get<Course>(url)
+    return this.http.get<Course>(url,httpOptions)
   }
 
   postCourse(course): Observable<Course> {
@@ -104,12 +104,12 @@ export class Service {
 
   //--------------------------------------Student-------------------------------------------------------
   getAllStudent(): Observable<Student[]> {
-    return this.http.get<Student[]>(`${baseApi}/JSON/student`||`${baseApiJWT}/JSON/student`)
+    return this.http.get<Student[]>(`${baseApi}/JSON/student`||`${baseApiJWT}/JSON/student`,httpOptions)
     }
 
   getFilterStudent(id:number): Observable<Student>{
     const url = `${baseApi}/JSON/student/${id}`||`${baseApiJWT}/JSON/student/${id}`;
-    return this.http.get<Student>(url)
+    return this.http.get<Student>(url,httpOptions)
   }
 
   postStudent(student): Observable<Student> {

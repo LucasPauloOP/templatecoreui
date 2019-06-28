@@ -28,8 +28,24 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { CallbackComponentComponent } from '../app/callback-component/callback-component.component';
 import { RegisterComponent } from './views/register/register.component';
+import {LoginComponent} from './views/login/login.component';
 
 const routes: Routes = [
+  {
+    path: 'callback',
+    component: CallbackComponentComponent,
+    data: {
+      title: 'carregamento Page'
+    }
+  },
+
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login Page'
+    }
+  },
 
 {
   path: '',
@@ -71,13 +87,7 @@ const routes: Routes = [
     title: 'Home'
   },
   children: [
-    {
-      path: 'callback',
-      component: CallbackComponentComponent,
-      data: {
-        title: 'Login Page'
-      }
-    },
+  
     /*user*/
     {path:  'user/:id', component:UserGetidComponent,  data: { title: 'Detalhes do usuário' }},
 

@@ -34,9 +34,6 @@ const routes: Routes = [
   {
     path: 'callback',
     component: CallbackComponentComponent,
-    data: {
-      title: 'carregamento Page'
-    }
   },
 
   {

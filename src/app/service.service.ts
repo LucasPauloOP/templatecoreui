@@ -8,10 +8,10 @@ import { Course } from './container/course/course-schema';
 import { Student} from './container/student/student-schema'
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json','authorization'  :'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik1qQTJPRFU0TWpnd1FVTTFNell4UWpjd1JEa3hSVUkzUkRVM01VWkdNek15UVRJM09FRXhRZyJ9.eyJpc3MiOiJodHRwczovL2Rldi00N2IzODgxZy5hdXRoMC5jb20vIiwic3ViIjoiWUJWcWFFV2Y4YTVISXoxVkZ4Wk03ZTVVZ1BpZ0N6N2tAY2xpZW50cyIsImF1ZCI6InNhZGFkYWQiLCJpYXQiOjE1NjE2NDYwNDEsImV4cCI6MTU2MTczMjQ0MSwiYXpwIjoiWUJWcWFFV2Y4YTVISXoxVkZ4Wk03ZTVVZ1BpZ0N6N2siLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.lo7YwYbT4D3jznkvagMG7csuEuRi48pk9ApyVpCrDJr_165sHtXRNprJy36yPNqMKO_k7tiSALPQUOnGlqAE2Gt2GjQ2n2aVD_kuznipgS7Vd0bFQb6ftOuzXHow0uNYAZQCKRmuQItJCJZdhNORdnT76Xc9HZxEDTbAAP_RU0SonJPPtbmJGeqQ3IfqepI3i9lY2CPVUVHbknEXxRgpdOsK3_Sj6uxmTwWYhY0vp2Jgkf5_nAmKpoMHuAcxjn0eEPL7UgHYHkg3D_NzcRioWquGjLEEKaB9t9CtLoWgKohI3d5gL8nPtyTVn83kTKReb-uaOp1-JayHxLEiOgnxJw'})
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
-const baseApi = 'https://traineeprominas-jjmg-sandbox.herokuapp.com/api/v1.1';
+const baseApi = 'https://traineeprominas-jjmg-sandbox.herokuapp.com/api/v1';
 const baseApiJWT = 'https://traineeprominas-jjmg-sandbox.herokuapp.com/api/v1.1'
 
 @Injectable({

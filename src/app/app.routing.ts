@@ -47,11 +47,17 @@ const routes: Routes = [
     }
   },
 
+  // {
+  //     path: 'logout',
+  //     component:
+  // },
+
 {
   path: '',
   redirectTo: 'dashboard',
   pathMatch: 'full',
 },
+
 {
   path: '404',
   component: P404Component,

@@ -19,6 +19,8 @@ import {
   MatToolbarModule } from '@angular/material';
   import { MatPaginatorModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
+import createAuth0Client from '@auth0/auth0-spa-js';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -71,6 +73,7 @@ import { StudentGetidComponent } from './container/student/student-getid/student
 import { StudentComponent } from './container/student/student/student.component';
 import { StudentPutComponent } from './container/student/student-put/student-put.component';
 import { CallbackComponentComponent } from './callback-component/callback-component.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   imports: [
@@ -125,6 +128,7 @@ import { CallbackComponentComponent } from './callback-component/callback-compon
     StudentComponent,
     StudentPutComponent,
     CallbackComponentComponent,
+    NavbarComponent
     
   ],
   providers: [{

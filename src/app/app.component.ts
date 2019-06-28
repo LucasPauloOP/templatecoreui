@@ -5,12 +5,10 @@ import { Auth0Service } from './auth0/auth0.service';
 @Component({
   // tslint:disable-next-line
   selector: 'body',
-  template: '<router-outlet></router-outlet>'
+  template: '<app-navbar></app-navbar><router-outlet></router-outlet>'
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router,public auth:Auth0Service) {
-    auth.handleAuthentication();
-   }
+  constructor(private router: Router){}
 
   ngOnInit() {
     this.router.events.subscribe((evt) => {

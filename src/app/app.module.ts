@@ -74,6 +74,7 @@ import { StudentComponent } from './container/student/student/student.component'
 import { StudentPutComponent } from './container/student/student-put/student-put.component';
 import { CallbackComponentComponent } from './callback-component/callback-component.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -128,7 +129,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     StudentComponent,
     StudentPutComponent,
     CallbackComponentComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProfileComponent
     
   ],
   providers: [{

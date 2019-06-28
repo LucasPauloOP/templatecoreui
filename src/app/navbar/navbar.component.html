@@ -1,4 +1,6 @@
 <header>
     <button (click)="login()" *ngIf="!isAuthenticated">Log In</button>
     <button (click)="logout()" *ngIf="isAuthenticated">Log Out</button>
+    <a [routerLink]="['']">profile</a>&nbsp;
+    <a [routerLink]="['profile']" *ngIf="isAuthenticated">Profile</a>
   </header>

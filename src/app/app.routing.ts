@@ -29,14 +29,18 @@ import { P500Component } from './views/error/500.component';
 import { CallbackComponentComponent } from '../app/callback-component/callback-component.component';
 import { RegisterComponent } from './views/register/register.component';
 import {LoginComponent} from './views/login/login.component';
+import {ProfileComponent} from './profile/profile.component';
 
 const routes: Routes = [
   {
     path: 'callback',
-    component: CallbackComponentComponent,
+    component: CallbackComponentComponent
   },
-
   {
+    path: 'profile',
+    component: ProfileComponent
+  },
+    {
     path: 'login',
     component: LoginComponent,
     data: {
@@ -67,13 +71,6 @@ const routes: Routes = [
   component: P500Component,
   data: {
     title: 'Page 500'
-  }
-},
-{
-  path: 'callback',
-  component: CallbackComponentComponent,
-  data: {
-    title: 'Login Page'
   }
 },
 {

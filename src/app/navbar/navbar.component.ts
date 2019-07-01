@@ -41,6 +41,7 @@ export class NavbarComponent implements OnInit {
    * Logs in the user by redirecting to Auth0 for authentication
    */
    async login() {
+     
      await this.auth0Client.loginWithRedirect({
       redirect_uri: `${window.location.origin}/callback`
     });
@@ -50,7 +51,9 @@ export class NavbarComponent implements OnInit {
    * Logs the user out of the applicaion, as well as on Auth0
    */
   logout() {
-    this.auth0Client.logout({
+    localStorage.clear();
+    this.auth0Client.logout( {
+      
       client_id: this.authService.config.client_id,
       returnTo: window.location.origin
     });

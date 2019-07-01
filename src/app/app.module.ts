@@ -75,6 +75,8 @@ import { StudentPutComponent } from './container/student/student-put/student-put
 import { CallbackComponentComponent } from './callback-component/callback-component.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ExternalApiComponent } from './external-api/external-api.component';
+
 
 @NgModule({
   imports: [
@@ -105,7 +107,6 @@ import { ProfileComponent } from './profile/profile.component';
     MatTableModule,
     MatPaginatorModule,
     MatToolbarModule,
-    
 
   ],
   declarations: [
@@ -130,13 +131,11 @@ import { ProfileComponent } from './profile/profile.component';
     StudentPutComponent,
     CallbackComponentComponent,
     NavbarComponent,
-    ProfileComponent
+    ProfileComponent,
+    ExternalApiComponent
     
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+  providers: [],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

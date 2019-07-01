@@ -16,9 +16,10 @@ export class Auth0Service {
 
   // Auth0 application configuration
   config = {
-    domain: "lucas-paulo.auth0.com",
-    client_id: "uElsiAY7RRlzYuewvuArf0i9OJlNsRxq",
-    redirect_uri: `${window.location.origin}/callback`
+    domain: "dev-47b3881g.auth0.com",
+    client_id: "L5r0l3wL8rNaFu5cHBo8koNGIDZh5kqN",
+    redirect_uri: `${window.location.origin}/callback`,
+    audience: "sadadad" // NEW - add in the audience value
   };
 
   /**

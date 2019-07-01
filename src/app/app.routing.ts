@@ -31,6 +31,7 @@ import { RegisterComponent } from './views/register/register.component';
 import {LoginComponent} from './views/login/login.component';
 import {ProfileComponent} from './profile/profile.component';
 
+
 const routes: Routes = [
   {
     path: 'callback',

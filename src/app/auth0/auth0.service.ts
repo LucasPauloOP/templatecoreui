@@ -16,8 +16,8 @@ export class Auth0Service {
 
   // Auth0 application configuration
   config = {
-    domain: "dev-47b3881g.auth0.com",
-    client_id: "L5r0l3wL8rNaFu5cHBo8koNGIDZh5kqN",
+    domain: "lucas-paulo.auth0.com",
+    client_id: "uElsiAY7RRlzYuewvuArf0i9OJlNsRxq",
     redirect_uri: `https://traineeprominas-lpop-view-sand.herokuapp.com/callback`,
     audience: "sadadad" // NEW - add in the audience value
   };

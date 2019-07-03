@@ -43,7 +43,7 @@ export class NavbarComponent implements OnInit {
    async login() {
      
      await this.auth0Client.loginWithRedirect({
-      redirect_uri: `${window.location.origin}/callback`
+      redirect_uri: `https://traineeprominas-lpop-view-sand.herokuapp.com/callback`
     });
    }
 
